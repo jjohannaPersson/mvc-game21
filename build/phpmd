@@ -1,0 +1,3 @@
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Dice\Game21.php:63	The method quitRound uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Dice\Game21.php:76	The method getWinner uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Router\Router.php:24	The method dispatch() has a Cyclomatic Complexity of 30. The configured cyclomatic complexity threshold is 10.
