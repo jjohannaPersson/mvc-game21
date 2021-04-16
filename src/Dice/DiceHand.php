@@ -63,6 +63,15 @@ class DiceHand
         return $res . " = " . $this->sum;
     }
 
+    public function getLastRollArray(int $dices): array
+    {
+        $res = array();
+        for ($i = 0; $i < $dices; $i++) {
+            $res[$i] = $this->dice[$i]->getLastRoll();
+        }
+        return $res;
+    }
+
 
     public function getSum()
     {

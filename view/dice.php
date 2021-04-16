@@ -24,14 +24,6 @@ for ($i = 0; $i < $rolls; $i++) {
 
 <p><?= $message ?></p>
 
-<form method="POST">
-    <input type="radio" name="dice" value="1">
-        <label for="dice">1</label><br>
-    <input type="radio" name="dice" value="2">
-        <label for="dice">2</label><br>
-    <input type="submit" value="Börja spela!">
-</form>
-
 <p>Dice!</p>
 
 <p><?= $dieLastRoll ?></p>

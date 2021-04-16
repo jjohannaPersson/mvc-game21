@@ -19,7 +19,7 @@ namespace jopn20\Dice;
 class Dice
 {
     private $roll = 0;
-    private $faces = 0;
+    private $faces = 6;
 
     public function __construct(int $faces = 6)
     {
@@ -33,7 +33,7 @@ class Dice
 
     public function roll(): int
     {
-        $this->roll = rand(1, $this->getFaces());
+        $this->roll = rand(1, $this->faces);
 
         return $this->roll;
     }

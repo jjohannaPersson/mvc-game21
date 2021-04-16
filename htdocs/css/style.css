@@ -8,6 +8,7 @@ main {
     min-height: 20em;
     width: 800px;
     margin: 8px auto;
+    padding-bottom: 4em;
 }
 
 .navbar {
@@ -47,6 +48,22 @@ h1 {
 .dice-sprite.dice-5 { background-position: -32px 0; }
 .dice-sprite.dice-6 { background-position: 0 0; }
 
+.possible-scores {
+    padding-top: 1em;
+}
+
+label {
+    padding-right: 1em;
+}
+
+.dices [type="checkbox" i] {
+    display: none;
+}
+
+input[type=checkbox]:checked + label i {
+    border: 2px solid #6E857F;
+}
+
 input[type=submit] {
     background-color: #6E857F;
     color: #EBCDAB;
@@ -55,10 +72,22 @@ input[type=submit] {
     margin-top: 5px;
 }
 
-footer {
+.game-table {
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.game-table td, th {
+    border: 2px solid #6E857F;
+    padding: 8px;
+    width: 70px;
+}
+
+.footer {
     background-color: #6E857F;
     color: #EBCDAB;
-    min-height: 4em;
+    height: 4em;
     text-align: center;
     position: fixed;
     left: 0;
