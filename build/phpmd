@@ -1,6 +1,3 @@
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Controller\Game.php:72	Avoid unused local variables such as '$game'.
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Dice\Game21.php:63	The method quitRound uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Dice\Game21.php:76	The method getWinner uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Controller\Yatzy.php	-	Unexpected token: YatzyGame, line: 27, col: 13, file: C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Controller\Yatzy.php.
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Yatzy\ScoreTable.php	-	Unexpected token: int, line: 12, col: 13, file: C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Yatzy\ScoreTable.php.
-C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Yatzy\YatzyGame.php	-	Unexpected token: DiceHand, line: 14, col: 13, file: C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Yatzy\YatzyGame.php.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Controller\Game.php:69	Avoid unused local variables such as '$game'.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Dice\Game21.php:73	The method quitRound uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+C:\Users\jjoha\dbwebb-kurser\mvc\me\game\src\Yatzy\ScoreTable.php:29	The method __construct uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
