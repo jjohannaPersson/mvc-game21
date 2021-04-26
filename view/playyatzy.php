@@ -12,7 +12,7 @@ $header = $header ?? null;
 $message = $message ?? null;
 
 $diceNumber = 1;
-$tableArray = $_SESSION['table']->getTable();
+$tableArray = $_SESSION['table'];
 $tablekey = array_keys($table);
 
 ?><h1><?= $header ?></h1>
