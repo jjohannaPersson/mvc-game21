@@ -12,7 +12,6 @@ use jopn20\Yatzy\ScoreTable;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
     renderView,
     url
 };
@@ -22,10 +21,9 @@ use function Mos\Functions\{
  */
 class Yatzy
 {
-    use ControllerTrait;
-
     private YatzyGame $yatzygame;
     private ScoreTable $scoreTable;
+    private array $currentSession;
 
     public function yatzy(): ResponseInterface
     {
@@ -51,7 +49,7 @@ class Yatzy
         $psr17Factory = new Psr17Factory();
         $this->init();
 
-        if (!array_key_exists("rolledDices", $_SESSION)) {
+        if (!array_key_exists("rolledDices", $this->currentSession)) {
             $this->yatzygame->rollDices();
             $rolledDices = $this->yatzygame->getRolledDices();
             $_SESSION['rolledDices'] = $rolledDices;
@@ -102,11 +100,11 @@ class Yatzy
 
         $newDiceQty = count($selectedDice);
         $newDiceValues = $this->yatzygame->rollroll($newDiceQty);
-        $i = 0;
+        $num = 0;
 
         foreach ($selectedDice as $selected) {
-            $startRolls[$selected - 1] = $newDiceValues[$i];
-            $i++;
+            $startRolls[$selected - 1] = $newDiceValues[$num];
+            $num++;
         }
 
         $_SESSION['rolledDices'] = $startRolls;
@@ -131,6 +129,7 @@ class Yatzy
         if (isset($_POST['selectedScore'])) {
             $key = $_POST['selectedScore'];
             $this->yatzygame->setScore($key, $_SESSION['possibleScores'][$key]);
+            $_SESSION['table'] = $this->yatzygame->getScores();
         }
         unset($_SESSION['possibleScores']);
         unset($_SESSION['rolledDices']);
@@ -151,17 +150,19 @@ class Yatzy
 
     private function init()
     {
-        if (array_key_exists('table', $_SESSION)) {
-            $this->scoreTable = $_SESSION['table'];
-        } else {
+        $this->currentSession = $_SESSION;
+        if (array_key_exists('table', $this->currentSession)) {
+            $table = $this->currentSession['table'];
+            $this->scoreTable = new ScoreTable($table);
+        } elseif (!array_key_exists('table', $this->currentSession)) {
             $this->scoreTable = new ScoreTable();
         }
 
-        $this->yatzygame = new YatzyGame($this->scoreTable);
+        $this->yatzygame = new YatzyGame($this->scoreTable->getTable());
     }
 
     private function uploadTable()
     {
-        $_SESSION['table'] = $this->scoreTable;
+        $_SESSION['table'] = $this->scoreTable->getTable();
     }
 }

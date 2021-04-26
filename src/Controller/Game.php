@@ -12,7 +12,6 @@ use jopn20\Dice\DiceHand;
 use jopn20\Dice\Game21;
 
 use function Mos\Functions\{
-    redirectTo,
     renderView,
     url
 };
@@ -22,8 +21,6 @@ use function Mos\Functions\{
  */
 class Game
 {
-    use ControllerTrait;
-
     public function dice(): ResponseInterface
     {
         $psr17Factory = new Psr17Factory();
@@ -132,5 +129,9 @@ class Game
                 ->withStatus(301)
                 ->withHeader("Location", url("/game21"));
         };
+
+        return (new Response())
+            ->withStatus(301)
+            ->withHeader("Location", url("/play21"));
     }
 }

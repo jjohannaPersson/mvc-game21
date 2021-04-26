@@ -16,16 +16,16 @@ class YatzyGame
     private int $dices = 5;
     private ScoreTable $scoreTable;
 
-    public function __construct(ScoreTable $table)
+    public function __construct(array $table = null)
     {
-        $this->scoreTable = $table;
+        $this->scoreTable = new ScoreTable($table);
         $this->diceHand = new DiceHand($this->dices);
     }
 
-    public function startGame(): void
-    {
-        $this->rollDices();
-    }
+    // public function startGame(): void
+    // {
+    //     $this->rollDices();
+    // }
 
     public function rollDices(): void
     {

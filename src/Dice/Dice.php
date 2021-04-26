@@ -26,11 +26,6 @@ class Dice
         $this->faces = $faces;
     }
 
-    public function getFaces()
-    {
-        return $this->faces;
-    }
-
     public function roll(): int
     {
         $this->roll = rand(1, $this->faces);

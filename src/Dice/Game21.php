@@ -48,6 +48,16 @@ class Game21
         ];
     }
 
+    public function setScorePlayer(int $testScore)
+    {
+        $this->player->setScore($testScore);
+    }
+
+    public function setScoreComputer(int $testScore)
+    {
+        $this->computerPlayer->setScore($testScore);
+    }
+
     public function computer()
     {
         $this->computerPlayer->computer($this->player->getScore());
@@ -73,9 +83,9 @@ class Game21
             return "Du";
         } elseif ($scores["human"] < 22 && $scores["computer"] > 21) {
             return "Du";
-        } else {
-            return "Datorn";
         }
+
+        return "Datorn";
     }
 
     public function resetScores()

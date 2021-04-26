@@ -10,18 +10,26 @@ namespace jopn20\Yatzy;
 class ScoreTable
 {
     private int $roundsLeft = 6;
+    private array $table;
 
-    private $table = array (
-        "1" => null,
-        "2" => null,
-        "3" => null,
-        "4" => null,
-        "5" => null,
-        "6" => null,
-        "Summa" => 0,
-        "Bonus" => 0,
-        "rundorKvar" => 6
-    );
+    public function __construct(array $currentTable = null)
+    {
+        if (is_null($currentTable)) {
+            $this->table = array (
+                "1" => null,
+                "2" => null,
+                "3" => null,
+                "4" => null,
+                "5" => null,
+                "6" => null,
+                "Summa" => 0,
+                "Bonus" => 0,
+                "rundorKvar" => 6
+            );
+        } else {
+            $this->table = $currentTable;
+        }
+    }
 
     public function scores(string $face, int $value): array
     {

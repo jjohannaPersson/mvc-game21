@@ -51,6 +51,11 @@ class Player
         $this->score = 0;
     }
 
+    public function setScore(int $testScore)
+    {
+        $this->score = $testScore;
+    }
+
     public function incrementWonRounds()
     {
         $this->wonRounds++;
