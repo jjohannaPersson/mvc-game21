@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620652157">
-  <project timestamp="1620652157">
+<coverage generated="1620654174">
+  <project timestamp="1620654174">
     <file name="C:\Users\jjoha\dbwebb-kurser\mvc\me\ci\config\bootstrap.php">
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
